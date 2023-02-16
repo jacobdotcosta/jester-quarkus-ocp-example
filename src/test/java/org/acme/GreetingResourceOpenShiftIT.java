@@ -4,6 +4,6 @@ import io.jester.api.OpenShiftServiceConfiguration;
 import io.jester.api.RunOnOpenShift;
 
 @RunOnOpenShift
-@OpenShiftServiceConfiguration(forService = "app", useInternalService = false)
+@OpenShiftServiceConfiguration(forService = "app")
 public class GreetingResourceOpenShiftIT extends GreetingResourceIT {
 }
