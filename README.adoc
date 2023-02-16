@@ -12,6 +12,6 @@ This document is a Jester example testing a Quarkus application on OCP.
 
 [source,bash]
 ----
-./mvnw clean integration-test -DskipITs=false
+./mvnw clean verify -DskipITs=false
 ----
 
