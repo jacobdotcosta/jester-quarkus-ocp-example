@@ -8,10 +8,10 @@ Antonio Costa
 
 This document is a Jester example testing a Quarkus application on OCP.
 
-== Create the project
+== Test the example
 
 [source,bash]
 ----
-quarkus create app --gradle --java=11
+./mvnw clean integration-test -DskipITs=false
 ----
 

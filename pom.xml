@@ -15,6 +15,9 @@
     <quarkus.platform.version>2.16.2.Final</quarkus.platform.version>
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
+    <failsafe-plugin.version>3.0.0-M7</failsafe-plugin.version>
+<!--    <surefire-plugin.version>2.22.2</surefire-plugin.version>-->
+<!--    <failsafe-plugin.version>2.22.2</failsafe-plugin.version>-->
     <jester.version>0.0.0-SNAPSHOT</jester.version>
   </properties>
   <dependencyManagement>
@@ -94,6 +97,9 @@
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
+          <includes>
+            <include>*Test.java</include>
+          </includes>
         </configuration>
 <!--        <executions>-->
 <!--          <execution>-->
@@ -113,8 +119,9 @@
 <!--        </executions>-->
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
+        <version>${failsafe-plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -122,6 +129,9 @@
               <goal>verify</goal>
             </goals>
             <configuration>
+              <includes>
+                <include>**/*IT.java</include>
+              </includes>
               <systemPropertyVariables>
                 <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
