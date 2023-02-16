@@ -56,12 +56,6 @@
       <scope>test</scope>
       <version>${jester.version}</version>
     </dependency>
-    <dependency>
-      <groupId>io.jester</groupId>
-      <artifactId>jester-containers</artifactId>
-      <scope>test</scope>
-      <version>${jester.version}</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
