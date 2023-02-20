@@ -5,5 +5,5 @@ import io.jester.api.RunOnOpenShift;
 
 @RunOnOpenShift
 @OpenShiftServiceConfiguration(forService = "app")
-public class GreetingResourceOpenShiftIT extends GreetingResourceIT {
+public class GreetingResourceOpenShiftIT extends GreetingResourceTest {
 }

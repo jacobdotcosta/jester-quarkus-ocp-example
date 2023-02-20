@@ -16,9 +16,9 @@
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M7</failsafe-plugin.version>
-<!--    <surefire-plugin.version>2.22.2</surefire-plugin.version>-->
-<!--    <failsafe-plugin.version>2.22.2</failsafe-plugin.version>-->
     <jester.version>0.0.0-SNAPSHOT</jester.version>
+    <exclude.openshift.tests>**/OpenShift*IT.java</exclude.openshift.tests>
+    <exclude.kubernetes.tests>**/Kubernetes*IT.java</exclude.kubernetes.tests>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -110,6 +110,10 @@
               <includes>
                 <include>**/*IT.java</include>
               </includes>
+              <excludes>
+                <exclude>${exclude.openshift.tests}</exclude>
+                <exclude>${exclude.kubernetes.tests}</exclude>
+              </excludes>
               <systemPropertyVariables>
                 <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
